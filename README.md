@@ -1,7 +1,7 @@
 # RusstressNet
 A .Net port of https://github.com/MashaPo/russtress
 
-[![Build status](https://ci.appveyor.com/api/projects/status/tiqminujri769s0l/branch/master?svg=true)](https://ci.appveyor.com/project/mikhail-barg/russtressnet/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/tiqminujri769s0l/branch/master?svg=true)](https://ci.appveyor.com/project/mikhail-barg/russtressnet/branch/master) [![NuGet](https://img.shields.io/nuget/v/RusstressNet.svg)](https://www.nuget.org/packages/RusstressNet/)
 
 Description from oiriginal repo:
 > The tool based on LSTM predicts stress position in each word in russian text depending on the word context. For more details about the tool see [«Automated Word Stress Detection in Russian»](http://www.aclweb.org/anthology/W/W17/W17-4104.pdf), EMNLP-2017, Copenhagen, Denmark.
