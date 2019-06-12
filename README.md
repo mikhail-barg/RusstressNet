@@ -21,3 +21,7 @@ using (AccentModel model = new AccentModel())
 ```
 
 Also see [console model executor](https://github.com/mikhail-barg/RusstressNet/blob/master/RusstressExecutor/Program.cs).
+
+## Thread-safety
+
+After creation, instances of `AccentModel` are thread-safe (because ONNX InferrenseSession [is thread-safe](https://github.com/Microsoft/onnxruntime/issues/114)), so you generally need a single instance of it.
