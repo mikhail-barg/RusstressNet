@@ -247,7 +247,16 @@ namespace RusstressNet
                     if (temp == token.ToLower())
                     {
                         int stressPosition = accentedWord.IndexOf('\'');
-                        string accentedToken = token.Substring(0, stressPosition) + '\'' + token.Substring(stressPosition);
+                        string accentedToken;
+                        if (stressPosition >= 0)
+                        {
+                            accentedToken = token.Substring(0, stressPosition) + '\'' + token.Substring(stressPosition);
+                        }
+                        else
+                        {
+                            //no accent
+                            accentedToken = token;
+                        }
                         final.Add(accentedToken);
                         accentedPhrase.RemoveAt(0);
                     }
@@ -263,6 +272,10 @@ namespace RusstressNet
         //copy of text_accentAPI.py/__predict
         private string PredictInternal(string word, string wordWithContext)
         {
+            if (wordWithContext.Length > MAXLEN)
+            {
+                return word; //no support for such long words
+            }
             DenseTensor<float> tensor = new DenseTensor<float>(this.m_inputShape);
             for (int i = 0; i < wordWithContext.Length; ++i)
             {
