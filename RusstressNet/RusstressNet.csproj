@@ -9,7 +9,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Version>1.1.0-rc01</Version>
+    <Version>1.1.0</Version>
 
     <Authors>Mikhail Barg</Authors>
     <Company>Mikhail Barg</Company>
@@ -30,14 +30,18 @@
     <None Remove="Data\russtress\model.onnx" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Release' ">
     <Content Include="Data\russtress\model.onnx">
       <!-- this is for package -->
       <Pack>true</Pack>
       <PackageCopyToOutput>true</PackageCopyToOutput>
-      
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Content Include="Data\russtress\model.onnx">
       <!-- this is for RusstressExecutor which does not use package data-->
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory> 
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
