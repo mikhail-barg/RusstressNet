@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 15 for Windows Desktop
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RusstressNet", "RusstressNet\RusstressNet.csproj", "{809F55B5-14E1-4EB2-8611-DF0C69526D04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RusstressExecutor", "RusstressExecutor\RusstressExecutor.csproj", "{99827246-104F-4A4D-8348-202086425FE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RusstressExecutorFromPackage", "RusstressExecutorFromPackage\RusstressExecutorFromPackage.csproj", "{7DBEABFD-A6F8-443C-9AC8-951AB20B0D30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{99827246-104F-4A4D-8348-202086425FE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99827246-104F-4A4D-8348-202086425FE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99827246-104F-4A4D-8348-202086425FE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DBEABFD-A6F8-443C-9AC8-951AB20B0D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DBEABFD-A6F8-443C-9AC8-951AB20B0D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DBEABFD-A6F8-443C-9AC8-951AB20B0D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DBEABFD-A6F8-443C-9AC8-951AB20B0D30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

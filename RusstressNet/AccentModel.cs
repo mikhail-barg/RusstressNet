@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics.Tensors;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.ML.OnnxRuntime;
+using Microsoft.ML.OnnxRuntime.Tensors;
 
 namespace RusstressNet
 {
@@ -26,10 +26,10 @@ namespace RusstressNet
         private readonly Dictionary<char, int> m_charIndices;
 
         private readonly List<HashSet<char>> m_defaultCategories = new List<HashSet<char>>() {
-            "0123456789".ToHashSet(),
-            " ".ToHashSet(),
-            ",.;:!?()\"[]@#$%^&*_+=«»".ToHashSet(),
-            "ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ-\'".ToHashSet()
+            StringToHashSet("0123456789"),
+            StringToHashSet(" "),
+            StringToHashSet(",.;:!?()\"[]@#$%^&*_+=«»"),
+            StringToHashSet("ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ-\'")
         };
 
         private readonly InferenceSession m_session;
@@ -317,6 +317,16 @@ namespace RusstressNet
                 return word;
             }
             return word.Substring(0, bestIndexInWord + 1) + '\'' + word.Substring(bestIndexInWord + 1);
+        }
+
+        private static HashSet<char> StringToHashSet(string s)
+        {
+            HashSet<char> result = new HashSet<char>();
+            foreach (char c in s)
+            {
+                result.Add(c);
+            }
+            return result;
         }
     }
 }
